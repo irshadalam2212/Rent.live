@@ -1,4 +1,4 @@
-import { Button, MenuItem, Select, TextField } from "@mui/material"
+import { Button, TextField } from "@mui/material"
 import Heading from "../components/heading"
 
 const Addlisting = () => {
@@ -21,18 +21,26 @@ const Addlisting = () => {
                         size="small"
                         autoComplete="off"
                     />
-                    <Select
-                        labelId="demo-simple-select-label"
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="No. of Bedrooms "
                         size="small"
-                        id="demo-simple-select"
-                        // value={age}
-                        label="Number of Bedrooms"
-                        // onChange={handleChange}
-                    >
-                        <MenuItem value={10}>1 Bedroom</MenuItem>
-                        <MenuItem value={20}>2 Bedroom</MenuItem>
-                        <MenuItem value={30}>3 Bedroom</MenuItem>
-                    </Select>
+                        autoComplete="off"
+                    />
+                    <TextField
+                        id="outlined-multiline-static"
+                        label="Listing Description"
+                        multiline
+                        rows={4}
+                    />
+                    <TextField
+                        required
+                        id="outlined-required"
+                        label="Monthly Listing Price "
+                        size="small"
+                        autoComplete="off"
+                    />
                 </div>
                 <Button variant="contained">Send Application</Button>
             </div>

@@ -1,7 +1,9 @@
 import { Button, TextField } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
 
-const SignIn = () => {
+const SignUp = () => {
+    const navigate = useNavigate()
     return (
         <div className="flex items-center justify-center h-screen w-full">
             <div className="flex flex-col gap-3 w-96 bg-white px-4 py-6">
@@ -33,10 +35,10 @@ const SignIn = () => {
                     />
                 </div>
                 <Button variant="contained">Sign Up</Button>
-                <Button variant="outlined">Sign In</Button>
+                <Button variant="outlined" onClick={() => navigate("/login")}>Sign In</Button>
             </div>
         </div>
     )
 }
 
-export default SignIn
+export default SignUp

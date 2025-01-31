@@ -1,7 +1,9 @@
 import { Button, TextField } from "@mui/material"
+import { useNavigate } from "react-router-dom"
 
 
 const Login = () => {
+    const navigate = useNavigate()
     return (
         <div className="flex items-center justify-center h-screen w-full bg-[url('/background.svg')]">
             <div className="flex flex-col gap-3 w-96 bg-white px-4 py-6">
@@ -25,7 +27,7 @@ const Login = () => {
                     />
                 </div>
                 <Button variant="contained">Sign In</Button>
-                <Button variant="outlined">Sign Up</Button>
+                <Button variant="outlined" onClick={() => navigate("/signup")}>Sign Up</Button>
             </div>
         </div>
     )
