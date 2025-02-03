@@ -3,18 +3,11 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import App from '../App'
 import Home from '../pages/home'
 import Login from '../components/login'
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import Privateroutes from './privateroutes'
 import SignUp from '../components/signup'
+import Addlisting from '../pages/addlisting'
 const AppRoutes: FC = () => {
-    const queryClient = new QueryClient({
-        // defaultOptions: {
-        //     queries: {
-        //         refetchOnWindowFocus: Dev_Var === environments.development ? false : true,
-        //     },
-        // },
-    });
+  
 
     const router = createBrowserRouter([
         {
@@ -39,7 +32,25 @@ const AppRoutes: FC = () => {
                 },
                 {
                     path: "/*",
-                    element: <Privateroutes />
+                    element: <Privateroutes />,
+                    children: [
+                        {
+                            path: "add-listing",
+                            element: <Addlisting />
+                        },
+                        {
+                            path: "my-profile",
+                            element: "My Profile"
+                        },
+                        {
+                            path: "hosts",
+                            element: "Host"
+                        },
+                        {
+                            path: "logout",
+                            element: <Home />
+                        }
+                    ]
                 }
             ]
         }
